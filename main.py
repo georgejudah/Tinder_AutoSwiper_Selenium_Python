@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 
+#ENTER YOUR USERNAME AND PASSWORD ACCORDINGLY
 FACEBOOK_USERNAME = "xyz@gmail.com"
 FACEBOOK_PASSWORD = "PASSWORD"
 chrome_driver_path = "D://Applications/chromedriver_win32/chromedriver.exe"
@@ -60,13 +61,13 @@ time.sleep(5)
 for n in range(100):
     time.sleep(6)
     try:
-        swipe_left = driver.find_element_by_xpath(
-            "//*[@id='u2005023502']/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[2]/button/span/span")
-        swipe_left.click()
+        swipe_right = driver.find_element_by_xpath(
+            "//*[@id='u2005023502']/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[4]/button/span/span")
+        swipe_right.click()
     except NoSuchElementException:
-        swipe_left = driver.find_element_by_xpath(
-            "//*[@id='u2005023502']/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[5]/div/div[2]/button/span/span")
-        swipe_left.click()
+        swipe_right = driver.find_element_by_xpath(
+            "//*[@id='u2005023502']/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[4]/button/span/span")
+        swipe_right.click()
 
     # Catches the cases where there is a "Matched" pop-up in front of the "Like" button:
     except ElementClickInterceptedException:
